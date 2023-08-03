@@ -1,12 +1,10 @@
 'use strict';
-
+require('dotenv').config();
 const line = require('@line/bot-sdk');
 const express = require('express');
-const config = require('./config.json');
-
 // create LINE SDK client
+const config = require('./config');
 const client = new line.Client(config);
-
 const app = express();
 
 // webhook callback
@@ -112,7 +110,7 @@ function handleSticker(message, replyToken) {
   return replyText(replyToken, 'Got Sticker');
 }
 
-const port = config.port;
+const port = 3000;
 app.listen(port, () => {
   console.log(`listening on ${port}`);
 });
