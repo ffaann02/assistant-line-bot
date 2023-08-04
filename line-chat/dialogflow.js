@@ -1,6 +1,6 @@
 const request = require('request');
 const crypto = require('crypto');
-
+require('dotenv').config();
 const config = {
   agentId: process.env.AGENT_ID,
   channelSecret: process.env.CHANNEL_SECRET

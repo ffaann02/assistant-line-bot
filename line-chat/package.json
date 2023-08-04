@@ -15,7 +15,6 @@
     "author": "Rudfaan Maimahad",
     "license": "ISC",
     "devDependencies": {
-        "@types/dialogflow-fulfillment": "^0.6.1",
         "eslint": "^5.5.0",
         "eslint-config-standard": "^12.0.0",
         "eslint-plugin-import": "^2.14.0",

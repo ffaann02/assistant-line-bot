@@ -40,11 +40,15 @@ async function handleText(req) {
 }
 
 async function handleFulfillment(agent) {
+  agent.add("sucess");
+  console.log("success");
 }
-
-app.post('/fulfillment', (request, response) => {
+app.use(express.json({ limit: '50mb' }));
+app.post('/fulfillment', (req, res) => {
+  const agent = new WebhookClient({ request: req, response: res });
   let intentMap = new Map();
-  intentMap.set('Default Welcome', handleFulfillment);
+  intentMap.set('Welcome', handleFulfillment);
+  agent.handleRequest(intentMap);
 });
 
 const port = 3000;
